@@ -1,6 +1,9 @@
 # DjangoWeb
 ## 가상환경 설정
 1. pyenv, pyenv-virtualenv 설치
+```
+brew install pyenv pyenv-virtualenv
+```
 2. pyenv에 가상환경 설치 / 확인
 ```
 pyenv install 3.x.x 
@@ -32,8 +35,9 @@ pyenv global 3.x.x
 3. django server 실행
 ```
 python3 manage.py startserver
+python3 manage.py runserver
 ```
-###프로젝트 구조에 대하여
+##프로젝트 구조에 대하여
 >django프로젝트는 동일한 이름의 디렉토리와 그 하위 디렉토리로 나뉨
 >상위 디렉토리는 project root, 하위 디렉토리는 project app으로 project app이 핵심부분을 담당함
 >상위 디렉토리는 수정이 자유로움
@@ -47,7 +51,7 @@ python3 manage.py startserver
 4. django app 생성, setting에 알리기
 앱생성
 ```
-django-admin startapp 앱이름
+python3 manage.py startapp 앱이름
 ```
 setting.py 에 앱 알리기
 ![image](https://user-images.githubusercontent.com/37652653/136658204-9a97f54a-506d-4710-ba24-d5a9d649b6cd.png)
@@ -71,6 +75,6 @@ urlpatterns = [
 # appname/views.py
 from django.http.response import HttpResponse
 from django.shortcuts import render
-def index(refquest):
+def index(request):
     return HttpResponse("<h2>Hello, Django</h2>")
 ```
