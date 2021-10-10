@@ -130,3 +130,53 @@ ex) capfirst , random, upper, lower ...
 >{% block %} 이용    
 >![image](https://user-images.githubusercontent.com/37652653/136685426-78798b47-ca36-46dd-b562-6f0f55c3bbdc.png)    
 >골조는 놔두고, block으로 된 부분만 상속받은 템플릿이 작성하면 됨
+***
+
+## Model/migration
+>모델을 통해서 테이블을 정의하고, 장고는 DB와 연결해주는 역할을 함 -> 직접적으로 SQL query를 입력하지 않아도 됨 // ORM(Object-Relational Mapper)
+>/models.py.  
+>![image](https://user-images.githubusercontent.com/37652653/136698888-d7ba0dd2-e636-4dd4-a187-cc634adf99ad.png).  
+1.migration
+model의 변경사항이 하나의 migration
+```
+# migration을 생성
+python3 manage.py makemigrations
+
+# 적용
+python3 manage.py migrate
+
+# migration 사항 보기
+python3 manage.py showmigrations
+
+# 어떻게 sql로 바뀌었는지 조회가능
+python3 manage.py sqlmigrate {앱이름} {마이그레이션 번호}
+``` 
+[Field 에 대한 공식문서](https://docs.djangoproject.com/en/3.1/ref/models/fields/#django.db.models.Field.default)
+
+2. DB table에 맞춰 입력하기
+* Shell 실행
+```
+python3 manage.py shell
+``` 
+* 모델 읽어오기
+from 패키지 경로 import Menu // 쉘환경에서 python을 실행한다고 생각하면됨
+* 데이터 입력 하기
+```
+실제 모델 필드에 맞게 내용 입력
+Menu.objects.create(field_1 = "내용", field_2 = "내용"...)
+```
+* 조회 하기
+```
+Menu.objects.all() // 튜플명만 보여주기
+Menu.objects.all().values() // 튜플 전체를 보여주기
+Menu.objects.order_by('정렬필드')// sql order by 생각해보기
+Menu.objects.filter(필드_contains='문자열')
+```
+
+* 수정 하기
+```
+data = Menu.objects.get(id=1)
+data.필드 = '변경값'
+data.save() //변경 반영
+data.delete() // 데이터 삭제
+```
