@@ -78,3 +78,29 @@ from django.shortcuts import render
 def index(request):
     return HttpResponse("<h2>Hello, Django</h2>")
 ```
+
+## template
+
+1. static files 관리
+> 앱폴더에 static/appname 디렉토리를 생성한후 css, fonts, images 디렉토리로 나누어 각각 관리한다.
+> ![image](https://user-images.githubusercontent.com/37652653/136682506-acfd5853-a5dd-4946-95ab-5bb496f2e46d.png)
+```
+#  html template에 static files의 사용 알리기
+{% load static %}
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" href={% static 'foods/css/syles.css' %} # 경로 설정하기
+</head>
+.
+.
+.
+<div class="food"> #이미지 경로 설정도 마찬가지
+      <img src={% static 'foods/images/chichen.jpg'%} width="300px" height="200px"/>
+      <div class="info">
+        <h3>코딩에 빠진 닭</h3>
+        <P>주머니가 가벼운 당신의 마음까지 생각한 가격!</p>
+        <a href="#">메뉴 보기</a>
+      </div>
+    </div>
+```
+2. 
