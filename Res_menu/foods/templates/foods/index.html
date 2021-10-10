@@ -1,34 +1,25 @@
+{% extends './base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-  <title>코스토랑</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href={% static 'foods/css/styles.css'%}>
-</head>
-<body>
-  <div> July 16, 2020 </div>
-  <hr/>
 
-  <h1>코스토랑</h1>
-  <h2>넌 코딩할때가 제일 이뻐</h2>
-  
-  <div class="food-container">
+{% block datd-block %}
+  <div>10 Oct, 2021</div>
+{% endblock datd-block %}
 
-    <div class="food">
-      <img src={% static 'foods/images/chichen.jpg'%} width="300px" height="200px"/>
+{% block food-container %}
+  <div class="food">
+      <img src={% static 'foods/images/chicken.jpg'%} width="300px" height="200px"/>
       <div class="info">
-        <h3>코딩에 빠진 닭</h3>
-        <P>주머니가 가벼운 당신의 마음까지 생각한 가격!</p>
+        <h3>개발자 최종테크</h3>
+        <P>나의 미래인가</p>
         <a href="#">메뉴 보기</a>
       </div>
     </div>
     
     <div class="food">
-      <img src={% static 'foods/images/shushi.jpg'%} width="300px" height="200px"/>
+      <img src={% static 'foods/images/sushi.jpg'%} width="300px" height="200px"/>
       <div class="info">
-        <h3>코코스시</h3>
-        <P>주머니가 가벼운 당신의 마음까지 생각한 가격!</p>
+        <h3>스시스시</h3>
+        <P>스시는 괜찮지 않을까?</p>
         <a href="#">메뉴 보기</a>
       </div>
     </div>
@@ -36,21 +27,49 @@
     <div class="food">
       <img src={% static 'foods/images/burger.jpg'%} width="300px" height="200px"/>
       <div class="info">
-        <h3>코데리아</h3>
-        <P>주머니가 가벼운 당신의 마음까지 생각한 가격!</p>
+        <h3>헬데리아</h3>
+        <P>의외로 햄버거는 건강식품이다.</p>
         <a href="#">메뉴 보기</a>
       </div>
     </div>
     
     <div class="food">
-      <img src={% static 'foods/images/bibimbab.jpg'%} width="300px" height="200px"/>
+      <img src={% static 'foods/images/bibimbap.jpg'%} width="300px" height="200px"/>
       <div class="info">
-        <h3>코가네</h3>
-        <P>주머니가 가벼운 당신의 마음까지 생각한 가격!</p>
+        <h3>스까밥</h3>
+        <P>일단 스까 </p>
         <a href="#">메뉴 보기</a>
       </div>
     </div>
-    
-  </div>
-</body>
-</html>
+
+    <div class="food">
+      <img src={% static 'foods/images/banana.jpg'%} width="300px" height="200px"/>
+      <div class="info">
+        <h3>바나나먹으면 반하나</h3>
+        <P>좋은 탄수화물 공급원이죠</p>
+        <a href="#">메뉴 보기</a>
+      </div>
+    </div>
+
+    <div class="food">
+      <img src={% static 'foods/images/croquette.jpg'%} width="300px" height="200px"/>
+      <div class="info">
+        <h3>고로케하면 쓰나</h3>
+        <P>다이어트의 적이다</p>
+        <a href="#">메뉴 보기</a>
+      </div>
+    </div>
+
+    <div class="food">
+      <img src={% static 'foods/images/pumpkin_soup.jpg'%} width="300px" height="200px"/>
+      <div class="info">
+        <h3>단호박시러</h3>
+        <P>호박죽 노노 ㅜㅜ</p>
+        <a href="#">메뉴 보기</a>
+      </div>
+    </div>
+{% endblock food-container %}
+
+
+
+
