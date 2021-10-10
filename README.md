@@ -103,4 +103,30 @@ def index(request):
       </div>
     </div>
 ```
-2. 
+2. template language
+> 템플릿 변수
+> > 지정한 데이터로 변환
+```
+{{변수명}} ,  {{변수명.속성}}
+```
+> 템플릿 태그
+> > 템플릿 로직
+```
+{% 태그 %} {% end태그 %}
+ex) for, if, with
+```
+> 탬플릿 필터
+> > 템플릿 변수를 변환
+```
+{{변수명|필터}}
+ex) capfirst , random, upper, lower ...
+```
+> 탬플릿 주석
+> > 주석 처리 담당
+```
+{# 주석 #}
+```
+3. template 상속
+>{% block %} 이용    
+>![image](https://user-images.githubusercontent.com/37652653/136685426-78798b47-ca36-46dd-b562-6f0f55c3bbdc.png)    
+>골조는 놔두고, block으로 된 부분만 상속받은 템플릿이 작성하면 됨
