@@ -27,7 +27,10 @@ pyenv global 3.x.x
 
 ## 가상환경에 Django 설치
 1. django 설치
-2. django 프로젝트 만들기
+```python
+python -m pip install django == 'version'
+```
+3. django 프로젝트 만들기
 ```
 ~directory $ django-admin startproject 프로젝트명
 # 자동으로 defalut파일 생성됨
